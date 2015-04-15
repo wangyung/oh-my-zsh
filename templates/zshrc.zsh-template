@@ -1,80 +1,90 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+#Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="afowler"
+ZSH_THEME="my-apple"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+# Set to this to use case-sensitive completion
+CASE_SENSITIVE="true"
 
-# Uncomment the following line to change how often to auto-update (in days).
+# Comment this out to disable bi-weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+# Uncomment following line if you want to disable colors in ls
+#DISABLE_LS_COLORS="true"
 
-# Uncomment the following line to disable auto-setting terminal title.
+# Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+# Uncomment following line if you want to disable command autocorrection
+ DISABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+#COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
+# Uncomment following line if you want to disable marking untracked files under
+# VCS as dirty. This makes repository status check for large repositories much,
+# much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
+plugins=(git osx mvn gradle)
 
-# User configuration
-
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+autoload bashcompinit
+bashcompinit
+#source ~/Development/completion/android
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Customize to your needs...
+#ANDROID_SDK_ROOT=~/Development/android/sdk
+#ANDROID_SDK_PATH=$ANDROID_SDK_ROOT/android-sdk-mac_x86
+#ANDROID_NDK_PATH=$ANDROID_SDK_ROOT/android-ndk
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+#export PATH=/Users/freddie/Programming/bin:$ANDROID_SDK_PATH/build-tools/latest:$ANDROID_SDK_PATH/tools:$ANDROID_SDK_PATH/platform-tools:$ANDROID_NDK_PATH:/usr/local/bin:$PATH
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#if [ -f `brew --prefix`/etc/bash_completion ]; then
+#  . `brew --prefix`/etc/bash_completion
+#fi
+
+#For Android development
+ulimit -S -n 1024
+
+#export CC="ccache gcc"
+#export CXX="ccache g++"
+
+#Only work on OSX
+#alias ls='ls -hGT '
+
+alias ll='ls -l'
+alias la='ls -a'
+alias "df=df -H"
+alias "du=du -h"
+#alias "cpp=ccache cpp"
+#alias "gcc=ccache gcc"
+#alias "g++=ccache g++"
+#alias -s py=vim
+
+#Setup for migme android
+#export JAVA_HOME=`/usr/libexec/java_home -v '1.7.0_71, x86_64'` #Use Java7
+#export MAVEN_OPTS="-Xms256m -Xmx512m -Djavax.net.ssl.trustStore=/Users/Freddie/.m2/projectgoth-store.jks -Djavax.net.ssl.trustStorePassword=ten20304050"
+#export ANDROID_JKS_STOREPASS=
+#export ANDROID_JKS_KEYPASS=
+#export ANDROID_HOME=$ANDROID_SDK_PATH
