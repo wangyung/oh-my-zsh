@@ -15,7 +15,11 @@ ZSH_THEME="my-apple"
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
 
-# Comment this out to disable bi-weekly auto-update checks
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
@@ -50,15 +54,15 @@ source $ZSH/oh-my-zsh.sh
 
 autoload bashcompinit
 bashcompinit
-#source ~/Development/completion/android
+#source ~/development/android/completion
 
 # Customize to your needs...
-#ANDROID_SDK_ROOT=~/Development/android/sdk
+#ANDROID_SDK_ROOT=~/development/android/sdk
 #ANDROID_SDK_PATH=$ANDROID_SDK_ROOT/android-sdk-mac_x86
 #ANDROID_NDK_PATH=$ANDROID_SDK_ROOT/android-ndk
 
 
-#export PATH=/Users/freddie/Programming/bin:$ANDROID_SDK_PATH/build-tools/latest:$ANDROID_SDK_PATH/tools:$ANDROID_SDK_PATH/platform-tools:$ANDROID_NDK_PATH:/usr/local/bin:$PATH
+#export PATH=/Users/freddie/development/bin:$ANDROID_SDK_PATH/build-tools/latest:$ANDROID_SDK_PATH/tools:$ANDROID_SDK_PATH/platform-tools:$ANDROID_NDK_PATH:/usr/local/bin:$PATH
 
 #if [ -f `brew --prefix`/etc/bash_completion ]; then
 #  . `brew --prefix`/etc/bash_completion
